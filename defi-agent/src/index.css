@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #0A0B0E;
+    color: #F1F3F9;
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #111318;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #2A2D38;
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #3A3D4A;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-bg-card border border-border-subtle rounded-xl;
+  }
+
+  .card-elevated {
+    @apply bg-bg-elevated border border-border-subtle rounded-xl;
+  }
+
+  .badge-buy {
+    @apply bg-signal-buy/15 text-signal-buy border border-signal-buy/30 text-xs font-semibold px-2.5 py-1 rounded-full;
+  }
+
+  .badge-hold {
+    @apply bg-signal-hold/15 text-signal-hold border border-signal-hold/30 text-xs font-semibold px-2.5 py-1 rounded-full;
+  }
+
+  .badge-sell {
+    @apply bg-signal-sell/15 text-signal-sell border border-signal-sell/30 text-xs font-semibold px-2.5 py-1 rounded-full;
+  }
+
+  .glow-green {
+    box-shadow: 0 0 20px rgba(0, 211, 149, 0.15);
+  }
+
+  .glow-purple {
+    box-shadow: 0 0 20px rgba(124, 58, 237, 0.2);
+  }
+
+  .glow-red {
+    box-shadow: 0 0 20px rgba(255, 77, 77, 0.15);
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-brand-green via-brand-purple to-brand-amber bg-clip-text text-transparent;
+  }
+
+  .live-dot {
+    @apply inline-block w-2 h-2 rounded-full bg-signal-buy animate-pulse-slow;
+  }
+
+  .mono {
+    @apply font-mono text-sm;
+  }
+}
+
+@layer utilities {
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient 8s ease infinite;
+  }
+
+  @keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+}
+
+/* Recharts custom styling */
+.recharts-cartesian-grid-horizontal line,
+.recharts-cartesian-grid-vertical line {
+  stroke: #1E2028 !important;
+}
+
+.recharts-tooltip-wrapper .recharts-default-tooltip {
+  background: #16181F !important;
+  border: 1px solid #2A2D38 !important;
+  border-radius: 8px !important;
+}
