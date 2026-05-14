@@ -12,7 +12,7 @@ import { searchTokenNews, analyzeSignalWithLLM } from './acedata'
 import { payForQuery } from './x402'
 import { storeDecisionOnChain } from './oobe'
 import { supabaseAdmin } from './db'
-
+import { registerAgentOnSAP, callSynapseSentinel, startAgentSession } from './sap'
 const TOKENS = ['SOL', 'JUP', 'RAY', 'BONK', 'WIF', 'JTO']
 const CYCLE_INTERVAL_MS = 5 * 60 * 1000 // 5 minutes
 
@@ -24,7 +24,8 @@ let broadcastFn: ((data: object) => void) | null = null
 async function runCycle() {
   if (!running) return
   cycleCount++
-
+  await startAgentSession(`cycle-${cycleCount}-${Date.now()}`)
+  await callSynapseSentinel(`Starting DeFi analysis cycle #${cycleCount}`)
   console.log(`\n🤖 Agent cycle #${cycleCount} — ${new Date().toISOString()}`)
   broadcastFn?.({ type: 'cycle_start', cycleCount, timestamp: new Date().toISOString() })
 

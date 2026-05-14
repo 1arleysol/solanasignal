@@ -19,9 +19,7 @@ import { createHash } from 'crypto'
 import { supabaseAdmin } from './db'
 import bs58 from 'bs58'
 
-const OOBE_PROGRAM_ID = new PublicKey(
-  process.env.OOBE_PROGRAM_ID || 'OOBEprot0c0LSo1anaAgentMemory1111111111111'
-)
+const OOBE_PROGRAM_ID = new PublicKey('11111111111111111111111111111111')
 
 // Simple Merkle tree implementation for decision history
 class MerkleTree {

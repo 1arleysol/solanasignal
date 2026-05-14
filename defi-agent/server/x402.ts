@@ -30,9 +30,7 @@ import bs58 from 'bs58'
 const USDC_MINT_DEVNET = new PublicKey('4zMMC9srt5Ri5X14GAgXhaHii3GnPAEERYPJgZJDncDU')
 const USDC_MINT_MAINNET = new PublicKey('EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v')
 
-const ACEDATA_FACILITATOR = new PublicKey(
-  process.env.ACEDATA_FACILITATOR_WALLET || 'AceData1FacilitatorWaLLet7xQK9vYmT3ZzPaXmJC'
-)
+  const ACEDATA_FACILITATOR = new PublicKey('11111111111111111111111111111111')
 
 const PAYMENT_AMOUNT_USDC = 0.001 // $0.001 per query
 const USDC_DECIMALS = 6
