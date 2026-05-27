@@ -2,12 +2,27 @@
 
 > Autonomous DeFi agent on Solana that fetches real-time market intelligence via **Ace Data Cloud**, pays for data autonomously via **x402 micropayments**, stores every decision on-chain using **OOBE Protocol**, and executes yield strategies via Jupiter & Kamino.
 
-**Superteam Bounty: OOBE × Ace Data Cloud**
+**🎥 [Watch Demo Video](https://youtu.be/kkW13cGp1Dw)** | **🌐 [Live Dashboard](https://defi-agent-eight.vercel.app)** | **📋 [Superteam Bounty](https://superteam.fun/earn/listing/autonomous-agent-bounty-oobe-ace-data-cloud)**
 
 [![Powered by OOBE Protocol](https://img.shields.io/badge/Powered%20by-OOBE%20Protocol-7C3AED)](https://oobeprotocol.ai)
 [![Ace Data Cloud](https://img.shields.io/badge/Data%20by-Ace%20Data%20Cloud-00D395)](https://acedata.cloud)
 [![x402 Payments](https://img.shields.io/badge/Payments-x402%20USDC-F59E0B)](https://facilitator.acedata.cloud)
 [![Solana](https://img.shields.io/badge/Chain-Solana-9945FF)](https://solana.com)
+[![Live](https://img.shields.io/badge/Status-Live%20on%20Vercel-00C853)](https://defi-agent-eight.vercel.app)
+
+---
+
+## 🎯 What it does
+
+SolanaSignal is a **fully autonomous DeFi agent** that runs without human intervention:
+
+1. Every 5 minutes it **pays for its own data** via x402 micropayments (0.001 USDC on Solana)
+2. Fetches **real-time market intelligence** from Ace Data Cloud (SERP + LLM)
+3. Makes AI-driven trading decisions and **stores them on-chain** via OOBE Protocol
+4. Executes swaps via Jupiter or yield strategies via Kamino when confidence > 75%
+5. Broadcasts live signals to the dashboard via WebSocket
+
+No cron jobs. No manual triggers. The agent self-funds, self-decides, self-executes.
 
 ---
 
@@ -76,7 +91,7 @@ await storeDecisionOnChain({ ...signal, paymentTxHash: payment.txHash })
 ### 1. Clone and install
 
 ```bash
-git clone <repo>
+git clone https://github.com/1arleysol/solanasignal
 cd solanasignal
 npm install
 ```
@@ -116,7 +131,7 @@ npm run dev
 
 ### 6. Start the agent
 
-Click **Start Agent** on the dashboard, or:
+Click **Start Agent** on the dashboard, or via API:
 
 ```bash
 curl -X POST http://localhost:3001/api/agent/start
@@ -141,16 +156,17 @@ All transactions link to [Solana Explorer](https://solscan.io) for verification.
 
 ## 🏆 Bounty Context
 
-This project was built for the **OOBE × Ace Data Cloud Autonomous Agent Bounty** on [Superteam Earn](https://superteam.fun/earn/listing/autonomous-agent-bounty-oobe-ace-data-cloud).
+Built for the **OOBE × Ace Data Cloud Autonomous Agent Bounty** on [Superteam Earn](https://superteam.fun/earn/listing/autonomous-agent-bounty-oobe-ace-data-cloud).
 
 **Why this wins:**
 - ✅ Uses OOBE Protocol for on-chain agent memory (PDAs + Merkle Trees)
-- ✅ Uses Ace Data Cloud for real-time SERP + LLM analysis
-- ✅ Implements x402 micropayment loop — the exact intersection of both protocols
-- ✅ Fully autonomous agent loop with no human intervention required
+- ✅ Uses Ace Data Cloud for real-time SERP + LLM analysis (3+ distinct services)
+- ✅ Implements x402 micropayment loop — exact intersection of both protocols
+- ✅ Fully autonomous: no human input required from trigger to execution
 - ✅ Production-quality dashboard with real-time WebSocket updates
 - ✅ Every decision verifiable on Solana Explorer
+- ✅ Live demo running 24/7 on Vercel
 
 ---
 
-Built with ❤️ on Solana | OOBE Protocol × Ace Data Cloud
+Built with ❤️ on Solana | OOBE Protocol × Ace Data Cloud × x402
